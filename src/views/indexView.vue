@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-5xl px-10 py-10 mx-auto my-3 bg-white rounded-lg shadow-xl">
+  <div class="max-w-5xl px-10 py-10 mx-3 my-3 bg-white rounded-lg shadow-xl">
     <n-form
       ref="formRef"
       :model="fromModel"
@@ -67,7 +67,7 @@
           <div class="text-center">
             <n-button
               type="success"
-              class="text-green-700"
+              class="text-green-700 w-28"
               @click="handleValidateButtonClick"
             >
               发布
