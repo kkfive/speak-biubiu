@@ -1,13 +1,15 @@
 <template>
   <n-config-provider :theme="theme">
-    <index-view></index-view>
+    <n-message-provider>
+      <index-view></index-view>
+    </n-message-provider>
   </n-config-provider>
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue'
 import indexView from './views/indexView.vue'
-import { NConfigProvider } from 'naive-ui'
+import { NConfigProvider, NMessageProvider } from 'naive-ui'
 import type { GlobalTheme } from 'naive-ui'
 
 const theme = ref<GlobalTheme | null>(null)
