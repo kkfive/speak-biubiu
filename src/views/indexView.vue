@@ -1,81 +1,83 @@
 <template>
-  <div class="max-w-5xl px-10 py-10 mx-3 my-3 bg-white rounded-lg shadow-xl">
-    <n-form
-      ref="formRef"
-      :model="fromModel"
-      :rules="formRules"
-      size="medium"
-      label-placement="top"
-    >
-      <n-collapse default-expanded-names="2" accordion>
-        <n-collapse-item title="基础设置" name="1">
-          <n-form-item path="api" label="API地址">
-            <n-input
-              v-model:value="settingFromModel.api"
-              type="text"
-              placeholder="请输入api地址"
-            />
-          </n-form-item>
-          <n-form-item path="userId" label="你的用户Id">
-            <n-input
-              v-model:value="settingFromModel.userId"
-              type="text"
-              placeholder="请输入你的用户Id"
-            />
-          </n-form-item>
-          <n-form-item path="token" label="用户Token">
-            <n-input
-              v-model:value="settingFromModel.token"
-              type="text"
-              placeholder="请输入你的token"
-            />
-          </n-form-item>
-        </n-collapse-item>
-        <n-collapse-item title="发送设置" name="2">
-          <n-form-item path="type" label="可视范围">
-            <n-select
-              v-model:value="fromModel.type"
-              placeholder="选择可视范围"
-              :options="typeOptions"
-            />
-          </n-form-item>
-          <n-form-item path="tag" label="选择标签">
-            <n-select
-              v-model:value="fromModel.tag"
-              placeholder="选择可视范围"
-              :options="tagOptions"
-            />
-          </n-form-item>
-          <n-form-item path="showComment" label="是否允许评论">
-            <n-select
-              v-model:value="fromModel.showComment"
-              placeholder="选择可视范围"
-              :options="showCommentOptions"
-            />
-          </n-form-item>
-          <n-form-item path="content" label="发布内容">
-            <n-input
-              v-model:value="fromModel.content"
-              placeholder="speak内容"
-              type="textarea"
-              :autosize="{
-                minRows: 3,
-                maxRows: 5
-              }"
-            />
-          </n-form-item>
-          <div class="text-center">
-            <n-button
-              type="success"
-              class="text-green-700 w-28"
-              @click="handleValidateButtonClick"
-            >
-              发布
-            </n-button>
-          </div>
-        </n-collapse-item>
-      </n-collapse>
-    </n-form>
+  <div class="flex items-center justify-center max-w-5xl mx-auto my-10">
+    <div class="flex-1 px-10 py-10 mx-3 my-10 bg-white rounded-lg shadow-xl">
+      <n-form
+        ref="formRef"
+        :model="fromModel"
+        :rules="formRules"
+        size="medium"
+        label-placement="top"
+      >
+        <n-collapse default-expanded-names="2" accordion>
+          <n-collapse-item title="基础设置" name="1">
+            <n-form-item path="api" label="API地址">
+              <n-input
+                v-model:value="settingFromModel.api"
+                type="text"
+                placeholder="请输入api地址"
+              />
+            </n-form-item>
+            <n-form-item path="userId" label="你的用户Id">
+              <n-input
+                v-model:value="settingFromModel.userId"
+                type="text"
+                placeholder="请输入你的用户Id"
+              />
+            </n-form-item>
+            <n-form-item path="token" label="用户Token">
+              <n-input
+                v-model:value="settingFromModel.token"
+                type="text"
+                placeholder="请输入你的token"
+              />
+            </n-form-item>
+          </n-collapse-item>
+          <n-collapse-item title="发送设置" name="2">
+            <n-form-item path="type" label="可视范围">
+              <n-select
+                v-model:value="fromModel.type"
+                placeholder="选择可视范围"
+                :options="typeOptions"
+              />
+            </n-form-item>
+            <n-form-item path="tag" label="选择标签">
+              <n-select
+                v-model:value="fromModel.tag"
+                placeholder="选择可视范围"
+                :options="tagOptions"
+              />
+            </n-form-item>
+            <n-form-item path="showComment" label="是否允许评论">
+              <n-select
+                v-model:value="fromModel.showComment"
+                placeholder="选择可视范围"
+                :options="showCommentOptions"
+              />
+            </n-form-item>
+            <n-form-item path="content" label="发布内容">
+              <n-input
+                v-model:value="fromModel.content"
+                placeholder="speak内容"
+                type="textarea"
+                :autosize="{
+                  minRows: 3,
+                  maxRows: 5
+                }"
+              />
+            </n-form-item>
+            <div class="text-center">
+              <n-button
+                type="success"
+                class="text-green-700 w-28"
+                @click="handleValidateButtonClick"
+              >
+                发布
+              </n-button>
+            </div>
+          </n-collapse-item>
+        </n-collapse>
+      </n-form>
+    </div>
   </div>
 </template>
 <script lang="ts" setup>
